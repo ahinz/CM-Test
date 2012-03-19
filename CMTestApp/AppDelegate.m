@@ -29,17 +29,18 @@
                @"k2",
                [NSDictionary dictionaryWithObjectsAndKeys:@"o1", @"k1",@"o2", @"k2",@"o3", @"k3",@"o4", @"k4", nil],
                @"k3",nil];
-    
+
+    /*
     [cms addObject:b];
     [b save:^(NSDictionary* status) {
         NSLog(@"Save: %@", status);
-    }];
+    }];*/
     
     // Run twice
     [cms allObjectsWithOptions:nil
                       callback:^(NSArray* obj, NSDictionary* err) {
                           Blarg* blg = [obj objectAtIndex:0];
-                          NSLog(@"Got back: %@", obj);
+                          NSLog(@"Got back: %@", [blg idata]);
                       }];
     // Override point for customization after application launch.
     return YES;
